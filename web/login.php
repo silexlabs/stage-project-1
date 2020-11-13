@@ -1,6 +1,6 @@
 <?php
 // login.php
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 use Auth0\SDK\Auth0;
 $auth0 = new Auth0([
   'domain' => 'test-silex-labs-rado.eu.auth0.com',
