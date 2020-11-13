@@ -1,6 +1,5 @@
 <?php
-// index.php
-// ...
+// login.php
 require 'vendor/autoload.php';
 use Auth0\SDK\Auth0;
 $auth0 = new Auth0([
@@ -10,11 +9,6 @@ $auth0 = new Auth0([
   'redirect_uri' => 'https://localhost:3000/',
   'scope' => 'openid profile email',
 ]);
+$auth0->login();
 $userInfo = $auth0->getUser();
-if (!$userInfo) {
-    // We have no user info
-    // See below for how to add a login link
-} else {
-    // User is authenticated
-    // See below for how to display user information
-}
+printf( 'Hello %s!', htmlspecialchars( $userInfo['name'] ) );
