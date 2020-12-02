@@ -1,4 +1,10 @@
 <?php
+
+function debug($var) {
+  echo '<pre>';
+      print_r($var);
+  echo '</pre>';
+}
 // index.php
 // ...
 require '../vendor/autoload.php';
@@ -14,7 +20,20 @@ $userInfo = $auth0->getUser();
 if (!$userInfo) {
     // We have no user info
     // See below for how to add a login link
+    echo '<a href="login.php">login</a>';
 } else {
     // User is authenticated
     // See below for how to display user information
+  echo "$userInfo";
 }
+debug($userInfo);
+
+if(!$userInfo) {
+// Display login button
+} else {
+  echo '<a href="/logout.php">Logout</a>';
+}
+  
+  
+
+  
