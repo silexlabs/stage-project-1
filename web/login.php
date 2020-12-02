@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
     </head>
     <body>
-    
+    <h1>Marketplace Silex</h1>
         <div id="container">
             <!-- zone de connexion -->
             
@@ -23,10 +23,14 @@
                 if(isset($_GET['erreur'])){
                     $err = $_GET['erreur'];
                     if($err==1 || $err==2)
-                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+                        echo "<p style='color:red'>Pseudo ou mot de passe incorrect</p>";
                 }
                 ?>
             </form>
+        </div>
+        <div>
+        <a href="loginauthor.php">Connexion pour auteur</a></br>
+        <a href="home.php">Inscription</a>
         </div>
     </body>
 </html>
